@@ -4,7 +4,7 @@ dist: focal
 
 vm:
   create:
-    name: Pro-Tier-Plan-i1
+    name: Pro-Tier-Plan-i2
 
 script:
   - echo "Creating custom file"
