@@ -1,35 +1,35 @@
-# os: linux
-# language: generic
-# dist: focal
-
-# vm:
-#   create:
-#     name: Pro-Tier-Plan-i1
-
-# script:
-#   - echo "Creating custom file"
-#   - sudo mkdir /my-custom-dir
-#   - echo "Test custom image!" | sudo tee /my-custom-dir/my_custom_file.txt
-#   - sudo cat /my-custom-dir/my_custom_file.txt
-#test
 os: linux
-
-language: java
-services:
-  - docker
-cache: bundler
+language: generic
 dist: focal
 
-install: skip
+vm:
+  create:
+    name: Pro-Tier-Plan-i1
 
-jobs:
-  include:
-    - name: testing
-      script: true
+script:
+  - echo "Creating custom file"
+  - sudo mkdir /my-custom-dir
+  - echo "Test custom image!" | sudo tee /my-custom-dir/my_custom_file.txt
+  - sudo cat /my-custom-dir/my_custom_file.txt
+#test
+# os: linux
 
-after_success:
-  - echo passed
-  - echo $TRAVIS_TEST_RESULT
-after_failure:
-  - echo failed
-  - echo $TRAVIS_TEST_RESULT
+# language: java
+# services:
+#   - docker
+# cache: bundler
+# dist: focal
+
+# install: skip
+
+# jobs:
+#   include:
+#     - name: testing
+#       script: true
+
+# after_success:
+#   - echo passed
+#   - echo $TRAVIS_TEST_RESULT
+# after_failure:
+#   - echo failed
+#   - echo $TRAVIS_TEST_RESULT
